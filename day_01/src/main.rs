@@ -4,17 +4,13 @@ use std::io::{self, BufRead, BufReader};
 fn main() -> io::Result<()> {
     let file_path = "./input.txt";
 
-    // Abre o arquivo para leitura
     let file = File::open(file_path)?;
 
-    // Cria um BufReader para ler o arquivo linha por linha
     let reader = BufReader::new(file);
 
-    // Inicializa um vetor para armazenar as linhas
     let mut lines = Vec::new();
     let mut lines2 = Vec::new();
 
-    // Lê o arquivo linha por linha e armazena as linhas no vetor
     for line in reader.lines() {
         match line {
             Ok(line) => {
